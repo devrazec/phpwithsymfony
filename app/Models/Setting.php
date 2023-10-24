@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-use App\Libs\Config;
-
 class Setting
 {
     private static $DATA = [];

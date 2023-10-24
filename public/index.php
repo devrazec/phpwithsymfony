@@ -6,15 +6,20 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 // Autoloader
-require __DIR__ . '../../vendor/autoload.php';
+require_once __DIR__ . '../../vendor/autoload.php';
 
-use App\Libs\Config;
-use App\Libs\Request;
-use App\Libs\Response;
-use App\Libs\Route;
-use App\Controllers\Home;
-use App\Models\Setting;
+//use App\Libs\Router;
+//use App\Routes\Web;
+//use App\Controllers\HomeController;
+//use App\Models\Setting;
 
-Route::get('/', function () {
-    (new Home())->index();
-});
+
+// Routes
+require_once '../App/Routes/Web.php';
+require_once '../App/Libs/Router.php';
+
+use Symfony\Component\ErrorHandler\Debug;
+use Symfony\Component\ErrorHandler\ErrorHandler;
+use Symfony\Component\ErrorHandler\DebugClassLoader;
+
+Debug::enable();
